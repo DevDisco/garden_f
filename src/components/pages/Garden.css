@@ -13,8 +13,11 @@
 
 p {
   max-width: 640px;
-  margin: 2rem;
+  margin: 0.5rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
   text-align: left;
+  white-space: pre-line;
 }
 
 h1 {
