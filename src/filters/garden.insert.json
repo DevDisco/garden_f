@@ -1,0 +1,57 @@
+{
+  "address": {
+    "title": "Straat en huisnummer",
+    "type": "string",
+    "required": true,
+    "min": 5,
+    "max": 64,
+    "placeholder": "J.J. Allanstraat 0"
+  },
+  "zip": {
+    "title": "Postcode",
+    "type": "zip",
+    "required": true,
+    "min": 6,
+    "max": 7,
+    "placeholder": "1234 AB"
+  },
+  "municipality": {
+    "title": "Plaatsnaam",
+    "type": "string",
+    "required": true,
+    "min": 3,
+    "max": 32,
+    "preset": "Westzaan"
+  },
+  "intro": {
+    "title": "Introductietekst",
+    "type": "string",
+    "required": false,
+    "min": 5,
+    "max": 256,
+    "preset": "Korte tekst onder foto eerste pagina. Twee zinnen is genoeg.",
+    "default": "[Random]"
+  },
+  "description": {
+    "title": "Beschrijving",
+    "type": "string",
+    "required": true,
+    "min": 5,
+    "preset": "Lange tekst als beschrijving van de tuin.",
+    "default": "[Random]"
+  },
+  "size": {
+    "title": "Oppervlakte van de tuin in m2.",
+    "type": "int",
+    "required": false,
+    "min": 1,
+    "max": 1000
+  },
+  "anno": {
+    "title": "Bouwjaar huis",
+    "type": "int",
+    "required": false,
+    "min": 1,
+    "max": 2030
+  }
+}

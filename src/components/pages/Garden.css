@@ -1,0 +1,37 @@
+.garden {
+  background: #fff;
+  text-align: center;
+  padding: 2rem;
+  display: grid;
+  justify-items: center;
+}
+
+.garden__story {
+  display: grid;
+  justify-content: center;
+}
+
+p {
+  max-width: 640px;
+  margin: 2rem;
+  text-align: left;
+}
+
+h1 {
+  margin-top: 2rem;
+}
+
+.garden__images {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  max-width: 700px;
+}
+
+.garden__image {
+  border-radius: 10px;
+  max-width: 320px;
+  width: 50%;
+  margin: 10px;
+}
