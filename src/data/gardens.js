@@ -1,14 +1,5 @@
 export const gardens = [
   {
-    title: "Westzaan XYZ",
-    description: "Welke tuin komt hier?",
-    image: "images/00.png",
-    tags: ["Onbekend", "Onbekend", "Onbekend"],
-    images: ["images/00.png"],
-    visit: "garden?id=0",
-    id: 0,
-  },
-  {
     title: "Kerkbuurt 12",
     description:
       "Diepe tuin die voor het grootste deel uit borders bestaat. Naast betrouwbare klassiekers, ook planten die je normaal alleen in botanische tuinen tegenkomt.",

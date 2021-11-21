@@ -12,7 +12,7 @@ function Navbar() {
     <>
       <nav className="navbar">
         <div className="navbar-container">
-          <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
+          <Link to="" className="navbar-logo" onClick={closeMobileMenu}>
             <i className="fab fa-react" />
             &nbsp; Opentuinendag Westzaan 2022
           </Link>

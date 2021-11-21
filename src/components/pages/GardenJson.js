@@ -1,25 +1,35 @@
 import React, { useState, useEffect } from "react";
 import "../../App.css";
 import "./Garden.css";
-
+//todo: integrate into garden.js
 export default function GardenJson() {
-  const query = window.location.search;
-  const current = new URLSearchParams(query).get("id");
   const [garden, setData] = useState([]);
 
-  const getData = () => {
-    fetch("http://symphart.test/get/" + current, { crossDomain: true })
-      .then((response) => {
-        return response.json();
-      })
-      .then((myJson) => {
-        setData(myJson);
-      });
-  };
-
   useEffect(() => {
+    const query = window.location.search;
+    const id = new URLSearchParams(query).get("id");
+    const table = "garden";
+    const url =
+      "https://dcslob.nl/api/public/index.php?id=" + id + "&t=" + table;
+
+    console.log(url);
+
+    const getData = () => {
+      fetch(url, {
+        crossDomain: true,
+      })
+        .then((response) => {
+          return response.json();
+        })
+        .then((myJson) => {
+          setData(myJson);
+        });
+    };
+
     getData();
   }, []);
+
+  console.log(garden);
 
   if (!garden || garden.length === 0) {
     //todo: add a nice error or default page

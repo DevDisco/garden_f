@@ -9,7 +9,7 @@ import GardenJson from "./components/pages/GardenJson";
 function App() {
   return (
     <>
-      <Router>
+      <Router basename="/westzaan/">
         <Navbar />
         <Switch>
           <Route path="/" exact component={Home} />
