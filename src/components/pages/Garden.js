@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "../../App.css";
+import ImageModal from "../ImageModal";
 import "./Garden.css";
 
 export default function Garden() {
+  const [openImageModal, setOpenImageModal] = useState(false);
+  const [imageData, setImageData] = useState(false);
   const [fetchData, setData] = useState([]);
 
   useEffect(() => {
@@ -43,10 +46,10 @@ export default function Garden() {
     <div className="garden">
       <div className="garden__story">
         <h1>{garden.address}</h1>
-        <p>{garden.description}</p>
         <p>
-          Postcode: {garden.zip} {garden.municipality}
+          {garden.zip} {garden.municipality}
         </p>
+        <p>{garden.description}</p>
         <p>Oppervlakte: {garden.size} m2</p>
       </div>
       <div className="garden__images">
@@ -58,10 +61,17 @@ export default function Garden() {
               key={image.id}
               alt={garden.title}
               className="garden__image"
+              onClick={() => {
+                setOpenImageModal(true);
+                setImageData(image.image);
+              }}
             ></img>
           ))
         }
       </div>
+      {openImageModal && (
+        <ImageModal closeImageModal={setOpenImageModal} imageData={imageData} />
+      )}
     </div>
   );
 }
