@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../../App.css";
 import ImageModal from "../ImageModal";
 import "./Garden.css";
+import GardenImage from "./GardenImage";
 
 export default function Garden() {
   const [openImageModal, setOpenImageModal] = useState(false);
@@ -11,7 +12,7 @@ export default function Garden() {
   useEffect(() => {
     const query = window.location.search;
     const id = new URLSearchParams(query).get("id");
-    const url = process.env.REACT_APP_API_URL + "?id=" + id;
+    const url = process.env.REACT_APP_API_URL + "?g=" + id;
 
     console.log(url);
 
@@ -56,16 +57,13 @@ export default function Garden() {
         {
           //images are stored in the database as a blob
           images.map((image) => (
-            <img
-              src={image.image}
-              key={image.id}
-              alt={garden.title}
-              className="garden__image"
-              onClick={() => {
-                setOpenImageModal(true);
-                setImageData(image.image);
-              }}
-            ></img>
+            <GardenImage
+              key={image.image_id}
+              image_id={image.image_id}
+              title={garden.address}
+              setOpenImageModal={setOpenImageModal}
+              setImageData={setImageData}
+            />
           ))
         }
       </div>

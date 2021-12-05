@@ -6,8 +6,7 @@ export default function GardenList() {
   const [fetchData, setData] = useState([]);
 
   useEffect(() => {
-    const url = process.env.REACT_APP_API_URL + "?id=0";
-
+    const url = process.env.REACT_APP_API_URL + "?g=0";
     console.log(url);
 
     const getData = () => {
@@ -35,8 +34,8 @@ export default function GardenList() {
   return (
     <div className="cards">
       <h1>&nbsp;</h1>
-      {gardens.map(({ id, image, address, intro }) => (
-        <GardenListItem id={id} image={image} label={address} text={intro} />
+      {gardens.map(({ id, address, intro }) => (
+        <GardenListItem id={id} label={address} text={intro} />
       ))}
     </div>
   );
