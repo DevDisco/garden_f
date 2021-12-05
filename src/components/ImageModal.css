@@ -1,8 +1,8 @@
 .modalBackground {
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.8);
-  position: absolute;
+  background-color: rgb(77, 106, 121);
+  position: fixed;
   top: 0px;
   left: 0px;
   display: flex;
@@ -13,12 +13,20 @@
 .modalContainer {
   display: flex;
   flex-direction: column;
-  padding: 5px;
+  padding: 10px;
 }
 
 .image {
   border-radius: 12px;
-  border: 4px solid black;
-  background-color: rgba(0, 0, 0, 0.8);
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border: 0px solid rgb(0, 0, 0);
+}
+
+.caption {
+  color: black;
+}
+
+.copyright {
+  color: lightgrey;
+  font-size: 75%;
+  font-style: italic;
 }

@@ -1,40 +1,47 @@
 .garden {
   background: #fff;
   text-align: center;
-  padding: 2rem;
+
   display: grid;
   justify-items: center;
 }
 
-.garden__story {
+.text {
   display: grid;
   justify-content: center;
 }
 
 p {
   max-width: 640px;
-  margin: 0.5rem;
   margin-left: 2rem;
   margin-right: 2rem;
   text-align: left;
   white-space: pre-line;
 }
 
-h1 {
-  margin-top: 2rem;
+p.description {
+  line-height: 1.3rem;
 }
 
-.garden__images {
+h1.gardenHeader {
+  text-align: left;
+  margin-left: 2rem;
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+h2.gardenHeader {
+  text-align: left;
+  margin-left: 2rem;
+  padding-bottom: 0.5rem;
+  padding-top: 2rem;
+  font-size: 1.2em;
+}
+
+.images {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: center;
   max-width: 700px;
-}
-
-.garden__image {
-  border-radius: 10px;
-  max-width: 320px;
-  width: 50%;
-  margin: 10px;
 }

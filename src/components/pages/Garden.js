@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import "../../App.css";
 import ImageModal from "../ImageModal";
-import "./Garden.css";
 import GardenImage from "./GardenImage";
+import "../../App.css";
+import "./Garden.css";
 
 export default function Garden() {
   const [openImageModal, setOpenImageModal] = useState(false);
@@ -14,7 +14,7 @@ export default function Garden() {
     const id = new URLSearchParams(query).get("id");
     const url = process.env.REACT_APP_API_URL + "?g=" + id;
 
-    console.log(url);
+    //console.log(url);
 
     const getData = () => {
       fetch(url, {
@@ -31,7 +31,7 @@ export default function Garden() {
     getData();
   }, []);
 
-  console.log(fetchData);
+  //console.log(fetchData);
 
   const garden = fetchData.garden;
   const images = fetchData.images;
@@ -43,17 +43,35 @@ export default function Garden() {
     return <p>...</p>;
   }
 
+  //replace single linebreaks with double linebreaks.
+  //easier on the eye.
+  const description = garden.description.replace(
+    /(^|[^\n])\n([^\n]|$)/g,
+    "$1\n\n$2"
+  );
+
   return (
     <div className="garden">
-      <div className="garden__story">
-        <h1>{garden.address}</h1>
+      <div className="text">
+        <h1 className="gardenHeader">{garden.address}</h1>
+        <p className="description">{description}</p>
+        {garden.favourite_plants && (
+          <>
+            <h2 className="gardenHeader">Favoriete plant(en)</h2>
+            <p className="description">{garden.favourite_plants}</p>
+          </>
+        )}
+        <h2 className="gardenHeader">Extra informatie</h2>
+        {garden.additional_info && (
+          <p className="description">{garden.additional_info}</p>
+        )}
+        <p>Oppervlakte van de tuin: {" " + garden.size} m2</p>
         <p>
-          {garden.zip} {garden.municipality}
+          Volledig adres voor in de routeplanner:
+          {" " + garden.address + ", " + garden.zip + " " + garden.municipality}
         </p>
-        <p>{garden.description}</p>
-        <p>Oppervlakte: {garden.size} m2</p>
       </div>
-      <div className="garden__images">
+      <div className="images">
         {
           //images are stored in the database as a blob
           images.map((image) => (

@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
+import "./GardenImage.css";
 
 function handleModal(props, image) {
   props.setOpenImageModal(true);
-  props.setImageData(image.image);
+  props.setImageData(image);
 }
 
 export default function GardenImage(props) {
@@ -10,7 +11,8 @@ export default function GardenImage(props) {
 
   useEffect(() => {
     const url = process.env.REACT_APP_API_URL + "?i=" + props.image_id + "";
-    console.log(url);
+
+    //console.log(url);
 
     const getData = () => {
       fetch(url, {
@@ -33,12 +35,18 @@ export default function GardenImage(props) {
     image.image = "./../placeholder.png";
   }
 
-  console.log("key=" + props.image_id);
+  //console.log(image);
+
+  if (image.title === "") {
+    image.title = props.title;
+  }
+
   return (
     <img
       src={image.image}
-      alt={props.title}
-      className="garden__image"
+      alt={image.title}
+      title={image.title}
+      className="smallImage"
       onClick={() => {
         handleModal(props, image);
       }}
