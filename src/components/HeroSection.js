@@ -2,7 +2,7 @@ import React from "react";
 import "../App.css";
 import "./HeroSection.css";
 
-function HeroSection() {
+export default function HeroSection() {
   return (
     <>
       <span id="top"></span>
@@ -12,9 +12,6 @@ function HeroSection() {
         <p>Zaterdag 2 juli</p>
         <p>10 tuinen</p>
       </div>
-      <span id="gardens"></span>
     </>
   );
 }
-
-export default HeroSection;

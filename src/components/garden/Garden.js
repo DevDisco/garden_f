@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import ImageModal from "../ImageModal";
+import ImageModal from "./ImageModal";
 import GardenImage from "./GardenImage";
 import "../../App.css";
 import "./Garden.css";
@@ -13,8 +13,6 @@ export default function Garden() {
     const query = window.location.search;
     const id = new URLSearchParams(query).get("id");
     const url = process.env.REACT_APP_API_URL + "?g=" + id;
-
-    //console.log(url);
 
     const getData = () => {
       fetch(url, {
@@ -51,19 +49,19 @@ export default function Garden() {
   );
 
   return (
-    <div className="garden">
-      <div className="text">
-        <h1 className="gardenHeader">{garden.address}</h1>
-        <p className="description">{description}</p>
+    <div className="garden-garden">
+      <div className="garden-story">
+        <h1 className="garden-header">{garden.address}</h1>
+        <p className="garden-description">{description}</p>
         {garden.favourite_plants && (
           <>
-            <h2 className="gardenHeader">Favoriete plant(en)</h2>
-            <p className="description">{garden.favourite_plants}</p>
+            <h2 className="garden-header">Favoriete plant(en)</h2>
+            <p className="garden-description">{garden.favourite_plants}</p>
           </>
         )}
-        <h2 className="gardenHeader">Extra informatie</h2>
+        <h2 className="garden-header">Extra informatie</h2>
         {garden.additional_info && (
-          <p className="description">{garden.additional_info}</p>
+          <p className="garden-description">{garden.additional_info}</p>
         )}
         <p>Oppervlakte van de tuin: {" " + garden.size} m2</p>
         <p>
@@ -71,16 +69,18 @@ export default function Garden() {
           {" " + garden.address + ", " + garden.zip + " " + garden.municipality}
         </p>
       </div>
-      <div className="images">
+      <div className="garden-images">
         {
           //images are stored in the database as a blob
           images.map((image) => (
             <GardenImage
               key={image.image_id}
               image_id={image.image_id}
+              id={garden.id}
               title={garden.address}
               setOpenImageModal={setOpenImageModal}
               setImageData={setImageData}
+              openImageModal={openImageModal}
             />
           ))
         }

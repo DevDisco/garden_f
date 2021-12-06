@@ -35,7 +35,7 @@
   font-size: 1.8rem;
 }
 
-.nav-menu {
+.navbar-menu {
   display: grid;
   grid-template-columns: repeat(4, auto);
   grid-gap: 10px;
@@ -45,11 +45,11 @@
   justify-content: end;
 }
 
-.nav-item {
+.navbar-item {
   height: 80px;
 }
 
-.nav-links {
+.navbar-links {
   color: #fff;
   display: flex;
   align-items: center;
@@ -58,7 +58,7 @@
   height: 100%;
 }
 
-.nav-links:hover {
+.navbar-links:hover {
   border-bottom: 4px solid #fff;
   transition: all 0.2s ease-out;
 }
@@ -67,7 +67,7 @@
   color: #fff;
 }
 
-.nav-links-mobile {
+.navbar-links-mobile {
   display: none;
 }
 
@@ -80,7 +80,7 @@
     position: relative;
   }
 
-  .nav-menu {
+  .navbar-menu {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -93,7 +93,7 @@
     transition: all 0.5s ease;
   }
 
-  .nav-menu.active {
+  .navbar-menu.active {
     background: #242222;
     left: 67%;
     opacity: 1;
@@ -101,14 +101,14 @@
     z-index: 1;
   }
 
-  .nav-links {
+  .navbar-links {
     text-align: center;
     padding: 2rem;
     width: 100%;
     display: table;
   }
 
-  .nav-links:hover {
+  .navbar-links:hover {
     background-color: #fff;
     color: #242424;
     border-radius: 0;
@@ -129,7 +129,7 @@
     font-size: 2rem;
   }
 
-  .nav-links-mobile {
+  .navbar-links-mobile {
     display: block;
     text-align: center;
     margin: 2rem auto;
@@ -144,7 +144,7 @@
     transition: all 0.3s ease-out;
   }
 
-  .nav-links-mobile:hover {
+  .navbar-links-mobile:hover {
     background: #fff;
     color: #242424;
     transition: 250ms;

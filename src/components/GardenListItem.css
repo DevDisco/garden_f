@@ -1,0 +1,82 @@
+.gardenitemlist-garden {
+  display: flex;
+  flex: 1;
+  margin: 1rem;
+  border-radius: 10px;
+  background: #95aa96;
+  max-width: 640px;
+}
+
+.gardenitemlist-link {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  box-shadow: 0 6px 20px rgba(56, 125, 255, 0.17);
+  -webkit-filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
+  filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
+  border-radius: 10px;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.gardenitemlist-figure {
+  position: relative;
+  width: 100%;
+  padding-top: 67%;
+  overflow: hidden;
+}
+
+.gardenitemlist-figure::after {
+  content: attr(data-category) " \2934";
+  position: absolute;
+  bottom: 0;
+  margin-left: 10px;
+  padding: 6px 8px;
+  max-width: calc((100%) - 60px);
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  background-color: rgb(77, 106, 121);
+  box-sizing: border-box;
+}
+
+.gardenitemlist-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  transition: all 0.2s linear;
+}
+
+.gardenitemlist-image:hover {
+  transform: scale(1.1);
+}
+
+.gardenitemlist-info {
+  padding: 20px 30px 30px;
+}
+
+.gardenitemlist-text {
+  color: #373146;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@media only screen and (min-width: 1024px) {
+  .gardenitemlist-garden {
+    display: flex;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .gardenitemlist-garden {
+    margin-bottom: 2rem;
+  }
+}

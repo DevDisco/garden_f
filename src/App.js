@@ -1,11 +1,11 @@
 import React from "react";
-import Navbar from "./components/Navbar";
-import "./App.css";
-import Home from "./components/pages/Home";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Garden from "./components/pages/Garden";
+import Navbar from "./components/Navbar";
+import Home from "./components/home/Home";
+import Garden from "./components/garden/Garden";
+import "./App.css";
 
-function App() {
+export default function App() {
   return (
     <>
       <Router basename={process.env.REACT_APP_ROOT_DIR}>
@@ -18,5 +18,3 @@ function App() {
     </>
   );
 }
-
-export default App;

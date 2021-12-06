@@ -12,7 +12,10 @@ export default function GardenImage(props) {
   useEffect(() => {
     const url = process.env.REACT_APP_API_URL + "?i=" + props.image_id + "";
 
-    //console.log(url);
+    //don't have to fetch stuff you don't see anyway
+    if (props.openImageModal) {
+      return false;
+    }
 
     const getData = () => {
       fetch(url, {
@@ -27,7 +30,7 @@ export default function GardenImage(props) {
     };
 
     getData();
-  }, []);
+  }, [props.image_id, props.openImageModal]);
 
   const image = fetchData;
 
@@ -46,7 +49,7 @@ export default function GardenImage(props) {
       src={image.image}
       alt={image.title}
       title={image.title}
-      className="smallImage"
+      className="gardenimage-image"
       onClick={() => {
         handleModal(props, image);
       }}

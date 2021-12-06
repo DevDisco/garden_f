@@ -7,7 +7,7 @@ export default function GardenList() {
 
   useEffect(() => {
     const url = process.env.REACT_APP_API_URL + "?g=0";
-    console.log(url);
+    //console.log(url);
 
     const getData = () => {
       fetch(url, {
@@ -26,17 +26,20 @@ export default function GardenList() {
 
   const gardens = fetchData;
 
-  console.log(gardens);
+  //console.log(gardens);
 
   if (!gardens || gardens.length === 0) {
     return <p>...</p>;
   }
+
   return (
-    <div className="cards">
-      <h1>&nbsp;</h1>
-      {gardens.map(({ id, address, intro }) => (
-        <GardenListItem id={id} label={address} text={intro} />
-      ))}
-    </div>
+    <>
+      <span id="gardens"></span>
+      <div className="gardenlist-gardens">
+        {gardens.map(({ id, address, intro }) => (
+          <GardenListItem key={id} id={id} label={address} text={intro} />
+        ))}
+      </div>
+    </>
   );
 }

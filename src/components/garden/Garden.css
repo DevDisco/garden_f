@@ -1,0 +1,46 @@
+.garden-garden {
+  background: #fff;
+  text-align: center;
+  display: grid;
+  justify-items: center;
+}
+
+.garden-story {
+  display: grid;
+  justify-content: center;
+}
+
+.garden-garden p {
+  max-width: 640px;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  text-align: left;
+  white-space: pre-line;
+}
+
+p.garden-description {
+  line-height: 1.3rem;
+}
+
+h1.garden-header {
+  text-align: left;
+  margin-left: 2rem;
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+h2.garden-header {
+  text-align: left;
+  margin-left: 2rem;
+  padding-bottom: 0.5rem;
+  padding-top: 2rem;
+  font-size: 1.2em;
+}
+
+.garden-images {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  max-width: 700px;
+}
